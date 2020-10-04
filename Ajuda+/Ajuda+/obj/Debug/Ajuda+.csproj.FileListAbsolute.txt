@@ -1,0 +1,9 @@
+F:\PAP\Ajuda+\Ajuda+\bin\Debug\Ajuda+.exe.config
+F:\PAP\Ajuda+\Ajuda+\bin\Debug\Ajuda+.exe
+F:\PAP\Ajuda+\Ajuda+\bin\Debug\Ajuda+.pdb
+F:\PAP\Ajuda+\Ajuda+\obj\Debug\Ajuda_.Login.resources
+F:\PAP\Ajuda+\Ajuda+\obj\Debug\Ajuda_.Properties.Resources.resources
+F:\PAP\Ajuda+\Ajuda+\obj\Debug\Ajuda+.csproj.GenerateResource.cache
+F:\PAP\Ajuda+\Ajuda+\obj\Debug\Ajuda+.csproj.CoreCompileInputs.cache
+F:\PAP\Ajuda+\Ajuda+\obj\Debug\Ajuda+.exe
+F:\PAP\Ajuda+\Ajuda+\obj\Debug\Ajuda+.pdb
