@@ -110,5 +110,14 @@
   <ItemGroup>
     <None Include="Resources\close.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QRCODE_cort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\QRCODE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login_desfo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
