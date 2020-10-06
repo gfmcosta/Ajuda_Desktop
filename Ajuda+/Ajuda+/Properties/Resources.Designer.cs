@@ -93,26 +93,6 @@ namespace Ajuda_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap login_desfo1 {
-            get {
-                object obj = ResourceManager.GetObject("login_desfo1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap login_desfo2 {
-            get {
-                object obj = ResourceManager.GetObject("login_desfo2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap logo_ajuda_ {
             get {
                 object obj = ResourceManager.GetObject("logo_ajuda+", resourceCulture);
