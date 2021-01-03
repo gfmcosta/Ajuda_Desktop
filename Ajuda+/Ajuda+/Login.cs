@@ -139,5 +139,13 @@ namespace Ajuda_
         {
             dragging = false;
         }
+
+        private void registar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form Registar= new Registar();
+            Registar.ShowDialog();
+            this.Close();
+        }
     }
 }

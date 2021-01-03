@@ -36,23 +36,23 @@
             this.registar = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panelQR = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.panelQR = new System.Windows.Forms.Panel();
             this.labelAPP = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panelQR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelQR.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,6 +120,7 @@
             this.registar.Size = new System.Drawing.Size(105, 16);
             this.registar.TabIndex = 8;
             this.registar.Text = "Registe-se aqui";
+            this.registar.Click += new System.EventHandler(this.registar_Click);
             // 
             // label1
             // 
@@ -136,19 +137,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // panelQR
-            // 
-            this.panelQR.BackgroundImage = global::Ajuda_.Properties.Resources.login_desfo;
-            this.panelQR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelQR.Controls.Add(this.labelAPP);
-            this.panelQR.Controls.Add(this.pictureBox7);
-            this.panelQR.Location = new System.Drawing.Point(0, 0);
-            this.panelQR.Name = "panelQR";
-            this.panelQR.Size = new System.Drawing.Size(401, 540);
-            this.panelQR.TabIndex = 11;
-            this.panelQR.Visible = false;
-            this.panelQR.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelQR_MouseClick);
             // 
             // pictureBox6
             // 
@@ -216,16 +204,18 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox7
+            // panelQR
             // 
-            this.pictureBox7.Image = global::Ajuda_.Properties.Resources.QRCODE;
-            this.pictureBox7.Location = new System.Drawing.Point(66, 124);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(278, 257);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 0;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            this.panelQR.BackgroundImage = global::Ajuda_.Properties.Resources._blur;
+            this.panelQR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelQR.Controls.Add(this.labelAPP);
+            this.panelQR.Controls.Add(this.pictureBox7);
+            this.panelQR.Location = new System.Drawing.Point(0, 0);
+            this.panelQR.Name = "panelQR";
+            this.panelQR.Size = new System.Drawing.Size(401, 540);
+            this.panelQR.TabIndex = 11;
+            this.panelQR.Visible = false;
+            this.panelQR.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelQR_MouseClick);
             // 
             // labelAPP
             // 
@@ -239,11 +229,22 @@
             this.labelAPP.TabIndex = 1;
             this.labelAPP.Text = "Instala já a nossa APP!";
             // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::Ajuda_.Properties.Resources.QRCODE;
+            this.pictureBox7.Location = new System.Drawing.Point(66, 124);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(278, 257);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 0;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(401, 540);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.label1);
@@ -262,14 +263,14 @@
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             this.panel1.ResumeLayout(false);
-            this.panelQR.ResumeLayout(false);
-            this.panelQR.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelQR.ResumeLayout(false);
+            this.panelQR.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
