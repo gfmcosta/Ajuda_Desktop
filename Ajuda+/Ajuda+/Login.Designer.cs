@@ -63,6 +63,7 @@
             this.textUtil.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textUtil.ForeColor = System.Drawing.Color.Black;
             this.textUtil.Location = new System.Drawing.Point(110, 288);
+            this.textUtil.MaxLength = 9;
             this.textUtil.Name = "textUtil";
             this.textUtil.Size = new System.Drawing.Size(205, 32);
             this.textUtil.TabIndex = 4;
@@ -108,6 +109,7 @@
             this.entrar.TabIndex = 7;
             this.entrar.Text = "Entrar";
             this.entrar.UseVisualStyleBackColor = false;
+            this.entrar.Click += new System.EventHandler(this.entrar_Click);
             // 
             // registar
             // 

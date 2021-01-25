@@ -1,11 +1,3 @@
 Registo dos Utentes pode ser feito na aplicação desktop por um secretario, medico ou enfermeiro.
 
-
-
-
-Pode tambem ser feito pela APP em ASP????
-
-
-Hierarquia em relacao ao funcionario (MEdico, Enfermeiro, Secretário);
-
 Utente pode enviar email pela app mobile para marcar consultas, falando com o secretario.

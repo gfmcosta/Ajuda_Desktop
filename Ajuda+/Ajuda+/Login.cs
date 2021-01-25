@@ -8,7 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BusinessLogicLayer;
 namespace Ajuda_
 {
     public partial class Login : Form
@@ -40,7 +40,7 @@ namespace Ajuda_
         private void textUtil_TextChanged(object sender, EventArgs e)
         {
             label1.Visible = false;
-            Regex textUtilr = new Regex(@"[^A-Za-z0-9]");
+            Regex textUtilr = new Regex(@"[^0-9]");
             MatchCollection matches = textUtilr.Matches(textUtil.Text);
             if (matches.Count > 0 || textUtil.Text == " ")
             {
@@ -82,17 +82,7 @@ namespace Ajuda_
 
         private void textSenha_TextChanged(object sender, EventArgs e)
         {
-            label1.Visible = false;
-            Regex textSenhar = new Regex(@"[^A-Za-z0-9]");
-            MatchCollection matches = textSenhar.Matches(textSenha.Text);
-            if (matches.Count > 0 || textSenha.Text == " ")
-            {
-                textSenha.Text = textSenha.Text.Remove(textSenha.Text.Length - 1);
-                textSenha.SelectionStart = textSenha.TextLength;
-                label1.Visible = true;
-                timer1.Start();
-                System.Media.SystemSounds.Hand.Play();
-            }
+            
         }
 
         private void panelQR_MouseClick(object sender, MouseEventArgs e)
@@ -146,6 +136,69 @@ namespace Ajuda_
             Form Registar= new Registar();
             Registar.ShowDialog();
             this.Close();
+        }
+
+        private void entrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //parametrs finded
+                if(textUtil.Text=="" || textSenha.Text == "")
+                {
+                    MessageBox.Show("Preencha todos os campos");
+                }
+                else
+                {
+                    //Login exist
+                    if (BLL.Paciente.SearchByIDandPass(Convert.ToInt32(textUtil.Text), textSenha.Text).Rows.Count > 0)
+                    {
+                        //paciente finded
+                        Globais.is2Authenticator = false;
+                        Globais.loggedId = Convert.ToInt32(textUtil.Text);
+                        Globais.Email = BLL.Paciente.SearchByIDandPass(Convert.ToInt32(textUtil.Text), textSenha.Text).Rows[0][4].ToString();
+                        this.Hide();
+                        Loading Loading = new Loading();
+                        Loading.ShowDialog();
+                        this.Close();
+                    }
+                    else if (BLL.Funcionario.SearchByIDandPass(Convert.ToInt32(textUtil.Text), textSenha.Text).Rows.Count > 0)
+                    {
+                        //find job
+                        if (BLL.Medico.SearchByID(Convert.ToInt32(textUtil.Text)).Rows.Count > 0)
+                        {
+                            Globais.job = "Medico";
+                        }
+                        else if (BLL.Administrativo.SearchByID(Convert.ToInt32(textUtil.Text)).Rows.Count > 0)
+                        {
+                            Globais.job = "Administrativo";
+                        }
+                        else
+                        {
+                            Globais.job = "Enfermeiro";
+                        }
+
+                        //job finded
+                        Globais.is2Authenticator = false;
+                        Globais.loggedId = Convert.ToInt32(textUtil.Text);
+                        Globais.Email = BLL.Funcionario.SearchByIDandPass(Convert.ToInt32(textUtil.Text), textSenha.Text).Rows[0][4].ToString();
+                        this.Hide();
+                        Loading Loading = new Loading();
+                        Loading.ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        //isNotValid
+                        MessageBox.Show("Dados inválidos.");
+                    }
+                }
+                
+            }catch(Exception es)
+            {
+                //crashError
+                MessageBox.Show("Erro. Contacte o administrador");
+                Console.WriteLine(es.ToString());
+            }
         }
     }
 }

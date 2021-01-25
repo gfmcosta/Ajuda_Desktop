@@ -9,3 +9,7 @@ F:\PAP\Ajuda+\Ajuda+\obj\Debug\Ajuda+.exe
 F:\PAP\Ajuda+\Ajuda+\obj\Debug\Ajuda+.pdb
 F:\PAP\Ajuda+\Ajuda+\obj\Debug\Ajuda+.csprojAssemblyReference.cache
 F:\PAP\Ajuda+\Ajuda+\obj\Debug\Ajuda_.Registar.resources
+F:\PAP\Ajuda+\Ajuda+\bin\Debug\Guna.UI.dll
+F:\PAP\Ajuda+\Ajuda+\obj\Debug\Ajuda_.Loading.resources
+F:\PAP\Ajuda+\Ajuda+\obj\Debug\Ajuda+.csproj.CopyComplete
+F:\PAP\Ajuda+\Ajuda+\obj\Debug\Ajuda_.Autenticador.resources
