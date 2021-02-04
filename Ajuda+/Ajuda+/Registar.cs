@@ -52,7 +52,14 @@ namespace Ajuda_
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            if(textEmail.Text=="" || textNome.Text =="" || textApelido.Text == "" || comboSexo.Text == "" || textTelemovel.Text == "" || dateTimePicker1.Value.Date> DateTime.Now.Date || textNIF.Text == "" || textSenha.Text == ""|| textDocumento.Text=="")
+            {
+                //Form is not valid
+            }
+            else
+            {
+                //Form is valid
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -160,16 +167,23 @@ namespace Ajuda_
             }
         }
 
-        private void textUtil_TextChanged(object sender, EventArgs e)
+       
+
+        private void textSenha_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
             label12.Visible = false;
             timer1.Stop();
-            Regex regexTN = new Regex(@"[^A-Za-z0-9_]");
-            MatchCollection matches = regexTN.Matches(textUtil.Text);
-            if (matches.Count > 0 || textUtil.Text == " ")
+            Regex regexApelido = new Regex(@"(?i)[^a-záéíóúàèìòùâêîôûãõç\\s ]");
+            MatchCollection matches = regexApelido.Matches(textApelido.Text);
+            if (matches.Count > 0 || textApelido.Text == " ")
             {
-                textUtil.Text = "";
-                label12.Text = "Introduza apenas Letras e números!";
+                textApelido.Text = "";
+                label12.Text = "Introduza apenas Letras!";
                 label12.Visible = true;
                 timer1.Start();
                 System.Media.SystemSounds.Hand.Play();
@@ -177,16 +191,21 @@ namespace Ajuda_
             }
         }
 
-        private void textSenha_TextChanged(object sender, EventArgs e)
+        private void comboNacionalidade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textNacionalidade_TextChanged(object sender, EventArgs e)
         {
             label12.Visible = false;
             timer1.Stop();
-            Regex regexTN = new Regex(@"[^A-Za-z0-9_]");
-            MatchCollection matches = regexTN.Matches(textSenha.Text);
-            if (matches.Count > 0 || textSenha.Text == " ")
+            Regex regexNac = new Regex(@"(?i)[^a-záéíóúàèìòùâêîôûãõç\\s]");
+            MatchCollection matches = regexNac.Matches(textNacionalidade.Text);
+            if (matches.Count > 0 || textNacionalidade.Text == " ")
             {
-                textSenha.Text = "";
-                label12.Text = "Introduza apenas Letras e números!";
+                textNacionalidade.Text = "";
+                label12.Text = "Introduza apenas Letras!";
                 label12.Visible = true;
                 timer1.Start();
                 System.Media.SystemSounds.Hand.Play();
