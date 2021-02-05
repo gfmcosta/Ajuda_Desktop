@@ -1,0 +1,24 @@
+C:\Users\costa\source\repos\QRCODE test\QRCODE test\bin\Debug\QRCODE test.exe.config
+C:\Users\costa\source\repos\QRCODE test\QRCODE test\bin\Debug\QRCODE test.exe
+C:\Users\costa\source\repos\QRCODE test\QRCODE test\bin\Debug\QRCODE test.pdb
+C:\Users\costa\source\repos\QRCODE test\QRCODE test\obj\Debug\QRCODE test.csprojAssemblyReference.cache
+C:\Users\costa\source\repos\QRCODE test\QRCODE test\obj\Debug\QRCODE_test.Form1.resources
+C:\Users\costa\source\repos\QRCODE test\QRCODE test\obj\Debug\QRCODE_test.Properties.Resources.resources
+C:\Users\costa\source\repos\QRCODE test\QRCODE test\obj\Debug\QRCODE test.csproj.GenerateResource.cache
+C:\Users\costa\source\repos\QRCODE test\QRCODE test\obj\Debug\QRCODE test.csproj.CoreCompileInputs.cache
+C:\Users\costa\source\repos\QRCODE test\QRCODE test\obj\Debug\QRCODE test.csproj.CopyComplete
+C:\Users\costa\source\repos\QRCODE test\QRCODE test\obj\Debug\QRCODE test.exe
+C:\Users\costa\source\repos\QRCODE test\QRCODE test\obj\Debug\QRCODE test.pdb
+C:\Users\costa\source\repos\QRCODE test\QRCODE test\bin\Debug\BasselTech CamCapture.dll
+C:\Users\costa\source\repos\QRCODE test\QRCODE test\bin\Debug\MessagingToolkit.QRCode.dll
+F:\PAP\QRCODE test\QRCODE test\bin\Debug\QRCODE test.exe.config
+F:\PAP\QRCODE test\QRCODE test\bin\Debug\QRCODE test.exe
+F:\PAP\QRCODE test\QRCODE test\bin\Debug\QRCODE test.pdb
+F:\PAP\QRCODE test\QRCODE test\obj\Debug\QRCODE test.csprojAssemblyReference.cache
+F:\PAP\QRCODE test\QRCODE test\obj\Debug\QRCODE_test.Form1.resources
+F:\PAP\QRCODE test\QRCODE test\obj\Debug\QRCODE_test.Properties.Resources.resources
+F:\PAP\QRCODE test\QRCODE test\obj\Debug\QRCODE test.csproj.GenerateResource.cache
+F:\PAP\QRCODE test\QRCODE test\obj\Debug\QRCODE test.csproj.CoreCompileInputs.cache
+F:\PAP\QRCODE test\QRCODE test\obj\Debug\QRCODE test.csproj.CopyComplete
+F:\PAP\QRCODE test\QRCODE test\obj\Debug\QRCODE test.exe
+F:\PAP\QRCODE test\QRCODE test\obj\Debug\QRCODE test.pdb
