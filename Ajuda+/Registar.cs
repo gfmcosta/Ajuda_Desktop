@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -11,6 +13,7 @@ using System.Windows.Forms;
 
 namespace Ajuda_
 {
+
     public partial class Registar : Form
     {
         private bool dragging = false;
@@ -50,7 +53,7 @@ namespace Ajuda_
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private async void button2_Click(object sender, EventArgs e)
         {
             if(textEmail.Text=="" || textNome.Text =="" || textApelido.Text == "" || comboSexo.Text == "" || textTelemovel.Text == "" || dateTimePicker1.Value.Date> DateTime.Now.Date || textNIF.Text == "" || textSenha.Text == ""|| textDocumento.Text=="")
             {
@@ -58,7 +61,59 @@ namespace Ajuda_
             }
             else
             {
+                //falar com o stor sobre isto. Procurar email or nif or cc existente
                 //Form is valid
+                List<Globais.Filter> filtros = new List<Globais.Filter>();
+
+                var filtro = new Globais.Filter()
+                {
+                    Field = "Email",
+                    Operator = "eq",
+                    Value = "me@home.pt",
+                    Logic = "or",
+                };
+
+                filtros.Add(new Globais.Filter()
+                {
+                    Field = "Nif",
+                    Operator = "eq",
+                    Value = "123456789",
+                    Logic = "or"
+                });
+
+                filtros.Add(new Globais.Filter()
+                {
+                    Field = "CC",
+                    Operator = "eq",
+                    Value = "123456789",
+                    Logic = "or"
+                });
+
+                var filter = new Globais.FilterDTO()
+                {
+                    Offset = 0,
+                    Limit = 10
+                };
+                filtro.Filters = filtros;
+                filter.Filter = filtro;
+
+                String URI;
+                URI = Globais.baseURL + "Paciente/filter";
+                using (var client = new HttpClient())
+                {
+                    var serializedUtilizador = JsonConvert.SerializeObject(filter);
+                    var content = new StringContent(serializedUtilizador, Encoding.UTF8, "application/json");
+                    var response = await client.PostAsync(URI, content); 
+                        if (response != null)
+                        {
+                            var jsonString = await response.Content.ReadAsStringAsync();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Erro servidor.");
+                        }
+                    
+                }
             }
         }
 

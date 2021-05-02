@@ -329,7 +329,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(166, 498);
+            this.label12.Location = new System.Drawing.Point(188, 501);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(181, 24);
             this.label12.TabIndex = 36;

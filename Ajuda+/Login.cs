@@ -326,7 +326,7 @@ namespace Ajuda_
                                             {
                                                 Globais.job = "Administrativo";
                                             }
-                                                this.Hide();
+                                            this.Hide();
                                             Loading Loading = new Loading();
                                             Loading.ShowDialog();
                                             this.Close();
