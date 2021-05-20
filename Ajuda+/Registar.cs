@@ -20,6 +20,20 @@ namespace Ajuda_
         private Point dragCursorPoint;
         private Point dragFormPoint;
         public int segundo;
+        public class Paciente {
+            public int IdPaciente;
+            public int IdUtilizador;
+            public string Nome;
+            public string Sexo;
+            public string Telemovel;
+            public string Nacionalidade;
+            public DateTime DataNasc;
+            public string Email;
+            public string CC;
+            public string NIF;
+            public string Senha;
+
+        }
         public Registar()
         {
             InitializeComponent();
@@ -55,13 +69,15 @@ namespace Ajuda_
 
         private async void button2_Click(object sender, EventArgs e)
         {
+            //Determines if a paciente have the same nif or email or CC.
+            bool noExists = false; 
+
             if(textEmail.Text=="" || textNome.Text =="" || textApelido.Text == "" || comboSexo.Text == "" || textTelemovel.Text == "" || dateTimePicker1.Value.Date> DateTime.Now.Date || textNIF.Text == "" || textSenha.Text == ""|| textDocumento.Text=="")
             {
                 //Form is not valid
             }
             else
             {
-                //falar com o stor sobre isto. Procurar email or nif or cc existente
                 //Form is valid
                 List<Globais.Filter> filtros = new List<Globais.Filter>();
 
@@ -69,7 +85,7 @@ namespace Ajuda_
                 {
                     Field = "Email",
                     Operator = "eq",
-                    Value = "me@home.pt",
+                    Value = textEmail.Text,
                     Logic = "or",
                 };
 
@@ -77,7 +93,7 @@ namespace Ajuda_
                 {
                     Field = "Nif",
                     Operator = "eq",
-                    Value = "123456789",
+                    Value = textNIF.Text,
                     Logic = "or"
                 });
 
@@ -85,7 +101,7 @@ namespace Ajuda_
                 {
                     Field = "CC",
                     Operator = "eq",
-                    Value = "123456789",
+                    Value = textDocumento.Text,
                     Logic = "or"
                 });
 
@@ -106,13 +122,54 @@ namespace Ajuda_
                     var response = await client.PostAsync(URI, content); 
                         if (response != null)
                         {
-                            var jsonString = await response.Content.ReadAsStringAsync();
+                        var jsonString = await response.Content.ReadAsStringAsync();
+                        if( jsonString == "{\"value\":[]}") {
+                            //We can register
+                            noExists = true;
+                        } else {
+                            noExists = false;
                         }
-                        else
-                        {
-                            MessageBox.Show("Erro servidor.");
-                        }
+
+                        } else {
+                        MessageBox.Show("Erro. Contacte o administrador do sistema");
+                        Console.WriteLine("Erro do servidor");
+                    }
                     
+                }
+                if (noExists == true) {
+                    //Let's register
+                    URI = Globais.baseURL + "paciente";
+                    using (var client = new HttpClient()) {
+                        //Criar class Paciente. substituir filtyer na 131 por paciente.
+                        //confirmar a response como na 109
+                        Paciente paciente = new Paciente();
+                        paciente.Nome = textNome.Text + " " + textApelido.Text;
+                        paciente.Sexo = comboSexo.SelectedItem.ToString();
+                        paciente.Telemovel = textTelemovel.Text;
+                        paciente.Nacionalidade = textNacionalidade.Text;
+                        paciente.DataNasc = dateTimePicker1.Value.Date;
+                        paciente.Email = textEmail.Text;
+                        paciente.NIF = textNIF.Text;
+                        paciente.CC = textDocumento.Text;
+                        //TODO encriptar a senha
+                        paciente.Senha = textSenha.Text;
+                        var serializedUtilizador = JsonConvert.SerializeObject(paciente);
+                        var content = new StringContent(serializedUtilizador, Encoding.UTF8, "application/json");
+                        var response = await client.PostAsync(URI, content);
+                        if (response.StatusCode == System.Net.HttpStatusCode.OK) {
+                            Console.WriteLine("Inseriu Paciente");
+
+                            this.Hide();
+                            Login lg = new Login();
+                            lg.ShowDialog();
+                            this.Close();
+                        } else {
+                            MessageBox.Show("Erro. Contacte o administrador do sistema");
+                            Console.WriteLine("Erro do servidor");
+                        }
+                    }
+                    } else {
+                    MessageBox.Show("Já existe um registo com os seus dados.");
                 }
             }
         }

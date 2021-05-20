@@ -15,9 +15,38 @@ namespace Ajuda_
         private bool dragging = false;
         private Point dragCursorPoint;
         private Point dragFormPoint;
+
+        private void LimparForm(GroupBox crl) {
+            foreach (var c in crl.Controls) {
+                if (c is TextBox) {
+                    ((TextBox)c).Text = String.Empty;
+                } else if (c is DateTimePicker) {
+                    ((DateTimePicker)c).Value = ((DateTimePicker)c).MinDate ;
+                }
+            }
+        }
+
+        private void CloseGroupBoxs(Form crl) {
+            foreach (var c in crl.Controls) {
+                if (c is GroupBox) {
+                    ((GroupBox)c).Visible = false;
+                }
+            }
+        }
+        private void ClosePanel(Form crl) {
+            foreach (var c in crl.Controls) {
+                if (c is Panel && ((Panel)c).Tag ==null){
+                    ((Panel)c).Visible = false;
+                }
+            }
+        }
+
         public Menu()
         {
             InitializeComponent();
+            dataMarcacaoAdd.MaxDate = DateTime.Now;
+            horaMarcacaoAdd.Format = DateTimePickerFormat.Custom;
+            horaMarcacaoAdd.CustomFormat = "hh:mm";
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -142,6 +171,32 @@ namespace Ajuda_
             panelExames.Visible = false;
             panelPacientes.Visible = false;
             panelConsultas.Visible = false;
+        }
+
+        private void label10_Click(object sender, EventArgs e) {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e) {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e) {
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e) {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e) {
+            LimparForm(AddConsultasBox);
+            CloseGroupBoxs(this);
+            ClosePanel(this);
+            AddConsultasBox.Visible = true;
+            tipoMarcacaoAdd.Text = "Consulta";
+            // codMarcacaoAdd.Text = query para procurar o ultimo cod de marcacao
+
         }
     }
 }
