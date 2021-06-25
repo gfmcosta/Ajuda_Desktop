@@ -69,8 +69,6 @@
     <Compile Include="Autenticador.Designer.cs">
       <DependentUpon>Autenticador.cs</DependentUpon>
     </Compile>
-    <Compile Include="BLL.cs" />
-    <Compile Include="DAL.cs" />
     <Compile Include="Globais.cs" />
     <Compile Include="Loading.cs">
       <SubType>Form</SubType>
@@ -187,6 +185,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\_blur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_ajuda.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

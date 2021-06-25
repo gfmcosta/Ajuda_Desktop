@@ -79,6 +79,7 @@ namespace Ajuda_
             else
             {
                 //Form is valid
+                string senha = Globais.ComputeSha256Hash(textSenha.Text);
                 List<Globais.Filter> filtros = new List<Globais.Filter>();
 
                 var filtro = new Globais.Filter()
@@ -112,7 +113,6 @@ namespace Ajuda_
                 };
                 filtro.Filters = filtros;
                 filter.Filter = filtro;
-
                 String URI;
                 URI = Globais.baseURL + "Paciente/filter";
                 using (var client = new HttpClient())
@@ -152,11 +152,11 @@ namespace Ajuda_
                         paciente.NIF = textNIF.Text;
                         paciente.CC = textDocumento.Text;
                         //TODO encriptar a senha
-                        paciente.Senha = textSenha.Text;
+                        paciente.Senha = senha;
                         var serializedUtilizador = JsonConvert.SerializeObject(paciente);
                         var content = new StringContent(serializedUtilizador, Encoding.UTF8, "application/json");
                         var response = await client.PostAsync(URI, content);
-                        if (response.StatusCode == System.Net.HttpStatusCode.OK) {
+                        if (response.StatusCode == System.Net.HttpStatusCode.Created) {
                             Console.WriteLine("Inseriu Paciente");
 
                             this.Hide();
@@ -164,6 +164,7 @@ namespace Ajuda_
                             lg.ShowDialog();
                             this.Close();
                         } else {
+
                             MessageBox.Show("Erro. Contacte o administrador do sistema");
                             Console.WriteLine("Erro do servidor");
                         }
@@ -234,7 +235,7 @@ namespace Ajuda_
             timer1.Stop();
             Regex regexNumeros = new Regex(@"[^0-9^]");
             MatchCollection matches = regexNumeros.Matches(textTelemovel.Text);
-            if (matches.Count > 0 || textTelemovel.Text == " ")
+            if (matches.Count > 0 || textTelemovel.Text == " " || textTelemovel.Text.Length > 9)
             {
                 textTelemovel.Text = "";
                 label12.Text = "Introduza apenas Números!";
@@ -251,7 +252,7 @@ namespace Ajuda_
             timer1.Stop();
             Regex regexNumeros = new Regex(@"[^0-9^]");
             MatchCollection matches = regexNumeros.Matches(textNIF.Text);
-            if (matches.Count > 0 || textNIF.Text == " ")
+            if (matches.Count > 0 || textNIF.Text == " " || textNIF.Text.Length > 9)
             {
                 textNIF.Text = "";
                 label12.Text = "Introduza apenas Números!";
@@ -268,7 +269,7 @@ namespace Ajuda_
             timer1.Stop();
             Regex regexNumeros = new Regex(@"[^0-9^]");
             MatchCollection matches = regexNumeros.Matches(textDocumento.Text);
-            if (matches.Count > 0 || textDocumento.Text == " ")
+            if (matches.Count > 0 || textDocumento.Text == " " || textDocumento.Text.Length > 8)
             {
                 textDocumento.Text = "";
                 label12.Text = "Introduza apenas Números!";
@@ -323,6 +324,10 @@ namespace Ajuda_
                 System.Media.SystemSounds.Hand.Play();
 
             }
+        }
+
+        private void textEmail_TextChanged(object sender, EventArgs e) {
+
         }
     }
 }

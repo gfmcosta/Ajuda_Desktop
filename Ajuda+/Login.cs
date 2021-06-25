@@ -8,7 +8,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessLogicLayer;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
@@ -90,7 +89,7 @@ namespace Ajuda_
             label1.Visible = false;
             Regex textUtilr = new Regex(@"[^0-9]");
             MatchCollection matches = textUtilr.Matches(textUtil.Text);
-            if (matches.Count > 0 || textUtil.Text == " ")
+            if (matches.Count > 0 || textUtil.Text == " " || textUtil.Text.Length > 9)
             {
                 textUtil.Text = textUtil.Text.Remove(textUtil.Text.Length-1);
                 textUtil.SelectionStart = textUtil.TextLength;
@@ -197,13 +196,14 @@ namespace Ajuda_
                 }
                 else
                 {
+                    string senha = Globais.ComputeSha256Hash(textSenha.Text);
                     Globais.Token = "";
                     //Generate a token if login exists
                     String URI;
-                    URI = Globais.baseURL+"auth/login?login="+textUtil.Text+"&senha="+textSenha.Text;
+                    URI = Globais.baseURL+"auth/login?login="+textUtil.Text+"&senha="+senha;
                     Utilizador util = new Utilizador();
                     util.Login = textUtil.Text;
-                    util.Senha = textSenha.Text;
+                    util.Senha = senha;
 
                     using (var client = new HttpClient())
                     {
@@ -266,6 +266,7 @@ namespace Ajuda_
                                         Globais.is2Authenticator = false;
                                         Globais.loggedId = textUtil.Text;
                                         Globais.Email = paciente.Email;
+                                        Globais.Nome = paciente.Nome;
                                         this.Hide();
                                         Loading Loading = new Loading();
                                         Loading.ShowDialog();
@@ -315,16 +316,16 @@ namespace Ajuda_
                                             Globais.is2Authenticator = false;
                                             Globais.loggedId = textUtil.Text;
                                             Globais.Email = funcionario.Email;
-                                            if (funcionario.Funcao == 1)
+                                            Globais.Nome = funcionario.Nome;
+                                            Globais.idLoggedFunc = funcionario.IdFuncionario;
+                                            if (funcionario.Funcao == 3)
                                             {
-                                                Globais.job = "Enfermeiro";
-                                            }else if (funcionario.Funcao == 2)
-                                            {
-                                                Globais.job = "Medico";
+                                                Globais.job = 3;
+                                            } else {
+                                                Globais.funcON = true;
                                             }
-                                            else
-                                            {
-                                                Globais.job = "Administrativo";
+                                            if (funcionario.Funcao == 5) {
+                                                Globais.Admin = true;
                                             }
                                             this.Hide();
                                             Loading Loading = new Loading();

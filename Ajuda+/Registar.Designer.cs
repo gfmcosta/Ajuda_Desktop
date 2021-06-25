@@ -70,7 +70,7 @@
             this.panel1.Location = new System.Drawing.Point(-1, -7);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(571, 40);
-            this.panel1.TabIndex = 7;
+            this.panel1.TabIndex = 70;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -134,7 +134,7 @@
             this.textTelemovel.Location = new System.Drawing.Point(275, 215);
             this.textTelemovel.Name = "textTelemovel";
             this.textTelemovel.Size = new System.Drawing.Size(205, 29);
-            this.textTelemovel.TabIndex = 2;
+            this.textTelemovel.TabIndex = 4;
             this.textTelemovel.TextChanged += new System.EventHandler(this.textTelemovel_TextChanged);
             // 
             // label1
@@ -174,7 +174,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(275, 288);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(205, 29);
-            this.dateTimePicker1.TabIndex = 4;
+            this.dateTimePicker1.TabIndex = 6;
             // 
             // label4
             // 
@@ -231,7 +231,7 @@
             this.textNIF.MaxLength = 9;
             this.textNIF.Name = "textNIF";
             this.textNIF.Size = new System.Drawing.Size(205, 29);
-            this.textNIF.TabIndex = 6;
+            this.textNIF.TabIndex = 9;
             this.textNIF.TextChanged += new System.EventHandler(this.textNIF_TextChanged);
             // 
             // label7
@@ -254,6 +254,7 @@
             this.textEmail.Name = "textEmail";
             this.textEmail.Size = new System.Drawing.Size(205, 29);
             this.textEmail.TabIndex = 7;
+            this.textEmail.TextChanged += new System.EventHandler(this.textEmail_TextChanged);
             // 
             // label8
             // 
@@ -359,7 +360,7 @@
             this.textApelido.Location = new System.Drawing.Point(275, 142);
             this.textApelido.Name = "textApelido";
             this.textApelido.Size = new System.Drawing.Size(205, 29);
-            this.textApelido.TabIndex = 37;
+            this.textApelido.TabIndex = 2;
             this.textApelido.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textNacionalidade
@@ -371,7 +372,7 @@
             this.textNacionalidade.Location = new System.Drawing.Point(12, 288);
             this.textNacionalidade.Name = "textNacionalidade";
             this.textNacionalidade.Size = new System.Drawing.Size(205, 29);
-            this.textNacionalidade.TabIndex = 39;
+            this.textNacionalidade.TabIndex = 5;
             this.textNacionalidade.TextChanged += new System.EventHandler(this.textNacionalidade_TextChanged);
             // 
             // Registar

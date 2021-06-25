@@ -30,7 +30,6 @@ F:\PAP\C#\Ajuda+\Ajuda+\bin\Debug\Newtonsoft.Json.dll
 F:\PAP\C#\Ajuda+\Ajuda+\bin\Debug\System.Net.Http.Formatting.dll
 F:\PAP\C#\Ajuda+\Ajuda+\bin\Debug\Newtonsoft.Json.xml
 F:\PAP\C#\Ajuda+\Ajuda+\bin\Debug\System.Net.Http.Formatting.xml
-F:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda+.csprojAssemblyReference.cache
 F:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda_.Autenticador.resources
 F:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda_.Loading.resources
 F:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda_.Login.resources
@@ -43,3 +42,4 @@ F:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda+.csproj.CoreCompileInputs.cache
 F:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda+.csproj.CopyComplete
 F:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda+.exe
 F:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda+.pdb
+F:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda+.csproj.AssemblyReference.cache

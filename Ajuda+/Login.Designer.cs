@@ -66,7 +66,7 @@
             this.textUtil.MaxLength = 9;
             this.textUtil.Name = "textUtil";
             this.textUtil.Size = new System.Drawing.Size(205, 32);
-            this.textUtil.TabIndex = 4;
+            this.textUtil.TabIndex = 1;
             this.textUtil.TextChanged += new System.EventHandler(this.textUtil_TextChanged);
             this.textUtil.MouseHover += new System.EventHandler(this.textUtil_MouseHover);
             // 
@@ -80,7 +80,7 @@
             this.textSenha.Name = "textSenha";
             this.textSenha.PasswordChar = '*';
             this.textSenha.Size = new System.Drawing.Size(205, 32);
-            this.textSenha.TabIndex = 5;
+            this.textSenha.TabIndex = 2;
             this.textSenha.TextChanged += new System.EventHandler(this.textSenha_TextChanged);
             this.textSenha.MouseHover += new System.EventHandler(this.textSenha_MouseHover);
             // 
@@ -131,7 +131,7 @@
             this.entrar.Location = new System.Drawing.Point(142, 413);
             this.entrar.Name = "entrar";
             this.entrar.Size = new System.Drawing.Size(137, 46);
-            this.entrar.TabIndex = 7;
+            this.entrar.TabIndex = 3;
             this.entrar.Text = "Entrar";
             this.entrar.UseVisualStyleBackColor = false;
             this.entrar.Click += new System.EventHandler(this.entrar_Click);
@@ -145,7 +145,7 @@
             this.registar.Location = new System.Drawing.Point(157, 465);
             this.registar.Name = "registar";
             this.registar.Size = new System.Drawing.Size(105, 16);
-            this.registar.TabIndex = 8;
+            this.registar.TabIndex = 4;
             this.registar.Text = "Registe-se aqui";
             this.registar.Click += new System.EventHandler(this.registar_Click);
             // 

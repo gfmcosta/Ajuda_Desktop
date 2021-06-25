@@ -8,7 +8,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessLogicLayer;
 namespace Ajuda_
 {
     public partial class Autenticador : Form
@@ -44,16 +43,7 @@ namespace Ajuda_
                 code = t1.Text + t2.Text + t3.Text + t4.Text + t5.Text+t6.Text;
                 if (code == Globais.code)
                 {
-                        String nome;
-                        if (BLL.Paciente.SearchByID(Globais.loggedId).Rows.Count > 0)
-                        {
-                            nome = BLL.Paciente.SearchByID(Globais.loggedId).Rows[0][2].ToString();
-                        }
-                        else
-                        {
-                            nome = BLL.Funcionario.SearchByID(Globais.loggedId).Rows[0][2].ToString();
-                        }
-                        MessageBox.Show("Bem Vindo/a " + nome);
+                        MessageBox.Show("Bem Vindo/a " + Globais.Nome);
 
                     Globais.is2Authenticator = true;
                     //go to Menu
@@ -169,16 +159,7 @@ namespace Ajuda_
             code = t1.Text + t2.Text + t3.Text + t4.Text + t5.Text + t6.Text;
             if (code == Globais.code)
             {
-                String nome;
-                if (BLL.Paciente.SearchByID(Globais.loggedId).Rows.Count > 0)
-                {
-                    nome = BLL.Paciente.SearchByID(Globais.loggedId).Rows[0][2].ToString();
-                }
-                else
-                {
-                    nome = BLL.Funcionario.SearchByID(Globais.loggedId).Rows[0][2].ToString();
-                }
-                MessageBox.Show("Bem Vindo/a " + nome);
+                MessageBox.Show("Bem Vindo/a " + Globais.Nome);
 
                 Globais.is2Authenticator = true;
                 //go to Menu
@@ -225,10 +206,7 @@ namespace Ajuda_
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Login login = new Login();
-            login.ShowDialog();
-            this.Close();
+            Application.Restart();
         }
 
         private void t6_KeyPress(object sender, KeyPressEventArgs e)
