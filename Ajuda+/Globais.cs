@@ -37,7 +37,7 @@ namespace Ajuda_
         public static string Nome;
         public static string Token = "";
        // public static string Token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MjI4MTMwNjEsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzcxIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NDQzNzEifQ.JQgc6hLXETC7PUdZTWugNKLpPzKY2DCqPjojLhm5kPA";
-        public static string baseURL = "https://localhost:44378/api/v1/";
+        public static string baseURL = "http://www.ajudamais.somee.com/api/v1/";
 
 
 

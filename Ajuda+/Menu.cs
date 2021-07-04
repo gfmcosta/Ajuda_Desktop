@@ -181,7 +181,7 @@ namespace Ajuda_ {
         }
 
         private async void button1_Click(object sender, EventArgs e) {
-            if (Globais.job == 3 || Globais.idLoggedFunc != 0) {
+            if (Globais.job == 3 || Globais.job == 5 ||  Globais.idLoggedFunc != 0) {
                 //funcionario
                 if (panelConsultas.Visible == true) {
                     panelConsultas.Visible = false;
@@ -196,7 +196,7 @@ namespace Ajuda_ {
                 ClosePanel(this);
                 HistoricoBox.Visible = true;
                 tipoMarcacaoAdd.Text = "Consulta";
-                if (Globais.job == 3) {
+                if (Globais.job == 3 || Globais.job==5) {
                     //administrativo
                     BindingSource bsDados = new BindingSource();
                     string URI = Globais.baseURL + "marcacao";
@@ -384,7 +384,7 @@ namespace Ajuda_ {
         }
 
         private async void button2_Click(object sender, EventArgs e) {
-            if (Globais.job == 3 || Globais.idLoggedFunc != 0) {
+            if (Globais.job == 3 || Globais.idLoggedFunc != 0 || Globais.job == 5) {
                 //funcionario
                 if (panelExames.Visible == true) {
                     panelExames.Visible = false;
@@ -399,7 +399,7 @@ namespace Ajuda_ {
                 ClosePanel(this);
                 HistoricoBox.Visible = true;
                 tipoMarcacaoAdd.Text = "Exame";
-                if (Globais.job == 3) {
+                if (Globais.job == 3 || Globais.job == 5) {
                     //administrativo
                     BindingSource bsDados = new BindingSource();
                     string URI = Globais.baseURL + "marcacao";
@@ -620,7 +620,7 @@ namespace Ajuda_ {
             dataMarcacaoEditar.MinDate = new DateTime(2020, 12, 24);
             dataMarcacaoEditar.Value = DateTime.Now;
             if (Globais.Admin == false) {
-                if (Globais.job == 3 || Globais.funcON == true) {
+                if (Globais.job == 3 || Globais.funcON == true || Globais.job == 5) {
                     //func
                     button6.Visible = false;
                 } else {
@@ -753,11 +753,11 @@ namespace Ajuda_ {
                         for (int i = 0; i < searchResults.Count; i++) {
                             if (searchResults[i].Funcao == 1 && searchResults[i].Sexo == "Masculino ") {
                                 ProfissionaisMarcacaoAdd.Items.Add(searchResults[i].IdFuncionario + " - Dr. " + searchResults[i].Nome);
-                            } else if (searchResults[i].Funcao == 1 && searchResults[i].Sexo == "Feminino") {
+                            } else if (searchResults[i].Funcao == 1 && searchResults[i].Sexo == "Feminino  ") {
                                 ProfissionaisMarcacaoAdd.Items.Add(searchResults[i].IdFuncionario + " - Dra. " + searchResults[i].Nome);
-                            } else if (searchResults[i].Funcao == 2 && searchResults[i].Sexo == "Masculino") {
+                            } else if (searchResults[i].Funcao == 2 && searchResults[i].Sexo == "Masculino ") {
                                 ProfissionaisMarcacaoAdd.Items.Add(searchResults[i].IdFuncionario + " - Enfermeiro " + searchResults[i].Nome);
-                            } else if (searchResults[i].Funcao == 2 && searchResults[i].Sexo == "Feminino") {
+                            } else if (searchResults[i].Funcao == 2 && searchResults[i].Sexo == "Feminino  ") {
                                 ProfissionaisMarcacaoAdd.Items.Add(searchResults[i].IdFuncionario + " - Enfermeira " + searchResults[i].Nome);
 
                             } else if (searchResults[i].Funcao == 4) {
@@ -957,7 +957,7 @@ namespace Ajuda_ {
                         marcacao = new Marcacao();
                         marcacao.IdPaciente = Globais.idPaciente;
                         marcacao.IdTecnico = Convert.ToInt32(idfunc);
-                        if (Globais.job == 3) {
+                        if (Globais.job == 3 || Globais.job == 5) {
                             marcacao.IdFuncionario = Globais.idLoggedFunc;
                         } else {
                             marcacao.IdFuncionario = 0;
@@ -1048,15 +1048,15 @@ namespace Ajuda_ {
                         for (int i = 0; i < searchResults.Count; i++) {
                             if (searchResults[i].Funcao == 1 && searchResults[i].Sexo == "Masculino ") {
                                 profissionalMarcacaoEditar.Items.Add(searchResults[i].IdFuncionario + " - Dr. " + searchResults[i].Nome);
-                            } else if (searchResults[i].Funcao == 1 && searchResults[i].Sexo == "Feminino") {
+                            } else if (searchResults[i].Funcao == 1 && searchResults[i].Sexo == "Feminino  ") {
                                 profissionalMarcacaoEditar.Items.Add(searchResults[i].IdFuncionario + " - Dra. " + searchResults[i].Nome);
-                            } else if (searchResults[i].Funcao == 2 && searchResults[i].Sexo == "Masculino") {
+                            } else if (searchResults[i].Funcao == 2 && searchResults[i].Sexo == "Masculino ") {
                                 profissionalMarcacaoEditar.Items.Add(searchResults[i].IdFuncionario + " - Enfermeiro " + searchResults[i].Nome);
-                            } else if (searchResults[i].Funcao == 2 && searchResults[i].Sexo == "Feminino") {
+                            } else if (searchResults[i].Funcao == 2 && searchResults[i].Sexo == "Feminino  ") {
                                 profissionalMarcacaoEditar.Items.Add(searchResults[i].IdFuncionario + " - Enfermeira " + searchResults[i].Nome);
 
                             } else if (searchResults[i].Funcao == 4) {
-                                ProfissionaisMarcacaoAdd.Items.Add(searchResults[i].IdFuncionario + " - Técnico " + searchResults[i].Nome);
+                                profissionalMarcacaoEditar.Items.Add(searchResults[i].IdFuncionario + " - Técnico " + searchResults[i].Nome);
                             }
                         }
                     }
@@ -1389,7 +1389,7 @@ namespace Ajuda_ {
                         marcacao = new Marcacao();
                         marcacao.IdPaciente = Globais.idPaciente;
                         marcacao.IdTecnico = Convert.ToInt32(idfunc);
-                        if (Globais.job == 3) {
+                        if (Globais.job == 3 || Globais.job == 5) {
                             marcacao.IdFuncionario = Globais.idLoggedFunc;
                         } else {
                             marcacao.IdFuncionario = 0;
@@ -1588,13 +1588,15 @@ namespace Ajuda_ {
                                     //adiciona à "estrutura"
                                     if (searchResult.Funcao == 1 && searchResult.Sexo == "Masculino ") {
                                         profissionalMarcacaoRemover.Text = (searchResult.IdFuncionario + " - Dr. " + searchResult.Nome);
-                                    } else if (searchResult.Funcao == 1 && searchResult.Sexo == "Feminino") {
+                                    } else if (searchResult.Funcao == 1 && searchResult.Sexo == "Feminino  ") {
                                         profissionalMarcacaoRemover.Text = (searchResult.IdFuncionario + " - Dra. " + searchResult.Nome);
-                                    } else if (searchResult.Funcao == 2 && searchResult.Sexo == "Masculino") {
+                                    } else if (searchResult.Funcao == 2 && searchResult.Sexo == "Masculino ") {
                                         profissionalMarcacaoRemover.Text = (searchResult.IdFuncionario + " - Enfermeiro " + searchResult.Nome);
-                                    } else if (searchResult.Funcao == 2 && searchResult.Sexo == "Feminino") {
+                                    } else if (searchResult.Funcao == 2 && searchResult.Sexo == "Feminino  ") {
                                         profissionalMarcacaoRemover.Text = (searchResult.IdFuncionario + " - Enfermeira " + searchResult.Nome);
 
+                                    }else if(searchResult.Funcao == 4) {
+                                        profissionalMarcacaoRemover.Text = (searchResult.IdFuncionario + " - Técnico " + searchResult.Nome);
                                     }
                                 }
                             }
@@ -1643,7 +1645,9 @@ namespace Ajuda_ {
             HistoricoBox.Visible = true;
             tipoMarcacaoAdd.Text = "Consulta";
             label28.Text = "Histórico Consultas";
-            if (Globais.job == 3) {
+            if (Globais.job == 3 || Globais.job == 5) {
+                label41.Visible = true;
+                nifHistorico.Visible = true;
                 //administrativo
                 BindingSource bsDados = new BindingSource();
                 string URI = Globais.baseURL + "marcacao";
@@ -1685,6 +1689,8 @@ namespace Ajuda_ {
                 }
             } else if (Globais.idLoggedFunc!=0) {
                 //tecnico
+                label41.Visible = true;
+                nifHistorico.Visible = true;
                 int idfunc=0;
                 BindingSource bsDados = new BindingSource();
                 string URI = Globais.baseURL + "funcionario?Query=nif%3D" + Globais.loggedId;
@@ -1752,6 +1758,8 @@ namespace Ajuda_ {
 
             } else {
                 //e paciente
+                label41.Visible = false;
+                nifHistorico.Visible = false;
                 int idpac=0;
                 nifHistorico.Visible = false;
                 BindingSource bsDados = new BindingSource();
@@ -1826,7 +1834,7 @@ namespace Ajuda_ {
         }
 
         private async void nifHistorico_TextChanged(object sender, EventArgs e) {
-            if (Globais.job == 3) {
+            if (Globais.job == 3 || Globais.job==5) {
                 //administrativo
                 int idPaciente = 0;
                 Boolean nada = false;
@@ -2107,10 +2115,12 @@ namespace Ajuda_ {
             LimparForm(PerfilBox);
             CloseGroupBoxs(this);
             ClosePanel(this);
-            if (Globais.idLoggedFunc == 0 && Globais.job != 3) {
+            if (Globais.idLoggedFunc == 0 && Globais.job != 3 && Globais.job !=5) {
                 label51.Text = "Perfil Paciente";
+                tipoMarcacaoAdd.Text = "Paciente";
             } else {
                 label51.Text = "Perfil Funcionário";
+                tipoMarcacaoAdd.Text = "Funcionario";
             }
             PerfilBox.Visible = true;
 
@@ -2263,11 +2273,11 @@ namespace Ajuda_ {
                         for (int i = 0; i < searchResults.Count; i++) {
                             if (searchResults[i].Funcao == 1 && searchResults[i].Sexo == "Masculino ") {
                                 ProfissionaisMarcacaoAdd.Items.Add(searchResults[i].IdFuncionario + " - Dr. " + searchResults[i].Nome);
-                            } else if (searchResults[i].Funcao == 1 && searchResults[i].Sexo == "Feminino") {
+                            } else if (searchResults[i].Funcao == 1 && searchResults[i].Sexo == "Feminino  ") {
                                 ProfissionaisMarcacaoAdd.Items.Add(searchResults[i].IdFuncionario + " - Dra. " + searchResults[i].Nome);
-                            } else if (searchResults[i].Funcao == 2 && searchResults[i].Sexo == "Masculino") {
+                            } else if (searchResults[i].Funcao == 2 && searchResults[i].Sexo == "Masculino ") {
                                 ProfissionaisMarcacaoAdd.Items.Add(searchResults[i].IdFuncionario + " - Enfermeiro " + searchResults[i].Nome);
-                            } else if (searchResults[i].Funcao == 2 && searchResults[i].Sexo == "Feminino") {
+                            } else if (searchResults[i].Funcao == 2 && searchResults[i].Sexo == "Feminino  ") {
                                 ProfissionaisMarcacaoAdd.Items.Add(searchResults[i].IdFuncionario + " - Enfermeira " + searchResults[i].Nome);
 
                             } else if (searchResults[i].Funcao == 4) {
@@ -2373,15 +2383,15 @@ namespace Ajuda_ {
                         for (int i = 0; i < searchResults.Count; i++) {
                             if (searchResults[i].Funcao == 1 && searchResults[i].Sexo == "Masculino ") {
                                 profissionalMarcacaoEditar.Items.Add(searchResults[i].IdFuncionario + " - Dr. " + searchResults[i].Nome);
-                            } else if (searchResults[i].Funcao == 1 && searchResults[i].Sexo == "Feminino ") {
+                            } else if (searchResults[i].Funcao == 1 && searchResults[i].Sexo == "Feminino  ") {
                                 profissionalMarcacaoEditar.Items.Add(searchResults[i].IdFuncionario + " - Dra. " + searchResults[i].Nome);
                             } else if (searchResults[i].Funcao == 2 && searchResults[i].Sexo == "Masculino ") {
                                 profissionalMarcacaoEditar.Items.Add(searchResults[i].IdFuncionario + " - Enfermeiro " + searchResults[i].Nome);
-                            } else if (searchResults[i].Funcao == 2 && searchResults[i].Sexo == "Feminino ") {
+                            } else if (searchResults[i].Funcao == 2 && searchResults[i].Sexo == "Feminino  ") {
                                 profissionalMarcacaoEditar.Items.Add(searchResults[i].IdFuncionario + " - Enfermeira " + searchResults[i].Nome);
 
                             } else if (searchResults[i].Funcao == 4) {
-                                ProfissionaisMarcacaoAdd.Items.Add(searchResults[i].IdFuncionario + " - Técnico " + searchResults[i].Nome);
+                                profissionalMarcacaoEditar.Items.Add(searchResults[i].IdFuncionario + " - Técnico " + searchResults[i].Nome);
                             }
                         }
                     }
@@ -2443,7 +2453,7 @@ namespace Ajuda_ {
             HistoricoBox.Visible = true;
             tipoMarcacaoAdd.Text = "Exame";
             label28.Text = "Histórico Exames";
-            if (Globais.job == 3) {
+            if (Globais.job == 3 || Globais.job ==5) {
                 //administrativo
                 BindingSource bsDados = new BindingSource();
                 string URI = Globais.baseURL + "marcacao";
@@ -2662,7 +2672,7 @@ namespace Ajuda_ {
                 //invalid
                 MessageBox.Show("Preencha todos os campos.");
             } else {
-                if (Globais.idLoggedFunc == 0 && Globais.job != 3) {
+                if (Globais.idLoggedFunc == 0 && Globais.job != 3 && Globais.job != 5 ) {
                     //paciente
                     BindingSource bsDados = new BindingSource();
                     string URI = Globais.baseURL + "paciente?Query=email%3D" + emailPerfil.Text;
@@ -2936,6 +2946,7 @@ namespace Ajuda_ {
                     }
                     if (noExists == true) {
                         //Let's register
+
                         URI = Globais.baseURL + "paciente";
                         using (var client = new HttpClient()) {
                             //Criar class Paciente. substituir filtyer na 131 por paciente.
@@ -2952,7 +2963,7 @@ namespace Ajuda_ {
                             paciente.Ativo = true;
                             //TODO encriptar a senha
                             string senha= "AJUDA" + addNIF.Text + "pswd";
-                            paciente.Senha = Globais.ComputeSha256Hash(senha);
+                            paciente.Senha = senha;
                             var serializedUtilizador = JsonConvert.SerializeObject(paciente);
                             var content = new StringContent(serializedUtilizador, Encoding.UTF8, "application/json");
                             var response = await client.PostAsync(URI, content);
@@ -4466,11 +4477,11 @@ namespace Ajuda_ {
                     if (senhaIgual == true) {
                         URI = Globais.baseURL + "utilizador/" + iduser;
                         using (var client = new HttpClient()) {
-
+                            newSenha = Globais.ComputeSha256Hash(senhaNovaC.Text);
                             Utilizador util = new Utilizador();
                             util.IdUtilizador = iduser;
                             util.Login = Globais.loggedId;
-                            util.Senha = senhaNovaC.Text;
+                            util.Senha = newSenha;
                             //TODO encriptar a senha
                             var serializedUtilizador = JsonConvert.SerializeObject(util);
                             var content = new StringContent(serializedUtilizador, Encoding.UTF8, "application/json");
@@ -4478,6 +4489,9 @@ namespace Ajuda_ {
                             if (response.StatusCode == System.Net.HttpStatusCode.OK) {
                                 Console.WriteLine("Senha alterada");
                                 MessageBox.Show("Senha alterada");
+                                senhaAntiga.Text = "";
+                                senhaNova.Text = "";
+                                senhaNovaC.Text = "";
                             } else {
                                 MessageBox.Show("Erro. Contacte o administrador do sistema");
                                 Console.WriteLine("Erro do servidor");
@@ -4568,6 +4582,10 @@ namespace Ajuda_ {
             } else {
                 MessageBox.Show("Confirme a nova senha.");
             }
+        }
+
+        private void PacienteADDBOX_Enter(object sender, EventArgs e) {
+
         }
     }
 }

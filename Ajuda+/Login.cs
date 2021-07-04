@@ -196,7 +196,7 @@ namespace Ajuda_
                 }
                 else
                 {
-                    string senha = Globais.ComputeSha256Hash(textSenha.Text);
+                    string senha = textSenha.Text;
                     Globais.Token = "";
                     //Generate a token if login exists
                     String URI;
@@ -321,6 +321,8 @@ namespace Ajuda_
                                             if (funcionario.Funcao == 3)
                                             {
                                                 Globais.job = 3;
+                                            } else if(funcionario.Funcao == 5) {
+                                                Globais.job = 5;
                                             } else {
                                                 Globais.funcON = true;
                                             }
@@ -358,6 +360,9 @@ namespace Ajuda_
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
         }
     }
 }

@@ -92,10 +92,11 @@ namespace Ajuda_
                         Autenticador.ShowDialog();
                         this.Close();
                     }
-                    catch
+                    catch (Exception ex)
                     {
                         // If Mail Doesnt Send Error Mesage Will Be Displayed
                         MessageBox.Show("Erro. Contacte o administrador.");
+                        Console.WriteLine(ex.Message);
                     }
 
                 }

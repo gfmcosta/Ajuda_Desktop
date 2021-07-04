@@ -79,7 +79,7 @@ namespace Ajuda_
             else
             {
                 //Form is valid
-                string senha = Globais.ComputeSha256Hash(textSenha.Text);
+                string senha = textSenha.Text;
                 List<Globais.Filter> filtros = new List<Globais.Filter>();
 
                 var filtro = new Globais.Filter()

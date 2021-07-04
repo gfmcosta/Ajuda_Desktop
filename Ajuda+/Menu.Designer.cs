@@ -145,6 +145,8 @@
             this.label41 = new System.Windows.Forms.Label();
             this.PerfilBox = new System.Windows.Forms.GroupBox();
             this.senhaBOX = new System.Windows.Forms.GroupBox();
+            this.senhaNovaC = new System.Windows.Forms.TextBox();
+            this.label83 = new System.Windows.Forms.Label();
             this.button33 = new System.Windows.Forms.Button();
             this.senhaNova = new System.Windows.Forms.TextBox();
             this.label82 = new System.Windows.Forms.Label();
@@ -246,8 +248,6 @@
             this.button30 = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label87 = new System.Windows.Forms.Label();
-            this.senhaNovaC = new System.Windows.Forms.TextBox();
-            this.label83 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -785,7 +785,7 @@
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(134, 41);
             this.button23.TabIndex = 43;
-            this.button23.Text = "Adicionar";
+            this.button23.Text = "Confirmar";
             this.button23.UseVisualStyleBackColor = false;
             this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
@@ -1175,7 +1175,7 @@
             this.button24.Name = "button24";
             this.button24.Size = new System.Drawing.Size(134, 41);
             this.button24.TabIndex = 43;
-            this.button24.Text = "Editar";
+            this.button24.Text = "Confirmar";
             this.button24.UseVisualStyleBackColor = false;
             this.button24.Click += new System.EventHandler(this.button24_Click);
             // 
@@ -1512,7 +1512,7 @@
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(134, 41);
             this.button25.TabIndex = 43;
-            this.button25.Text = "Desmarcar";
+            this.button25.Text = "Confirmar";
             this.button25.UseVisualStyleBackColor = false;
             this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
@@ -1651,6 +1651,7 @@
             this.nifHistorico.Name = "nifHistorico";
             this.nifHistorico.Size = new System.Drawing.Size(131, 26);
             this.nifHistorico.TabIndex = 34;
+            this.nifHistorico.Visible = false;
             this.nifHistorico.TextChanged += new System.EventHandler(this.nifHistorico_TextChanged);
             // 
             // label41
@@ -1710,6 +1711,25 @@
             this.senhaBOX.TabIndex = 52;
             this.senhaBOX.TabStop = false;
             this.senhaBOX.Visible = false;
+            // 
+            // senhaNovaC
+            // 
+            this.senhaNovaC.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.senhaNovaC.Location = new System.Drawing.Point(238, 91);
+            this.senhaNovaC.Name = "senhaNovaC";
+            this.senhaNovaC.PasswordChar = '*';
+            this.senhaNovaC.Size = new System.Drawing.Size(174, 26);
+            this.senhaNovaC.TabIndex = 55;
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label83.Location = new System.Drawing.Point(6, 91);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(226, 22);
+            this.label83.TabIndex = 54;
+            this.label83.Text = "Confirmar Nova Senha:";
             // 
             // button33
             // 
@@ -1787,7 +1807,7 @@
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(134, 41);
             this.button26.TabIndex = 50;
-            this.button26.Text = "Atualizar";
+            this.button26.Text = "Confirmar";
             this.button26.UseVisualStyleBackColor = false;
             this.button26.Click += new System.EventHandler(this.button26_Click);
             // 
@@ -1993,6 +2013,7 @@
             this.PacienteADDBOX.TabIndex = 51;
             this.PacienteADDBOX.TabStop = false;
             this.PacienteADDBOX.Visible = false;
+            this.PacienteADDBOX.Enter += new System.EventHandler(this.PacienteADDBOX_Enter);
             // 
             // addSexo
             // 
@@ -2038,7 +2059,7 @@
             this.button27.Name = "button27";
             this.button27.Size = new System.Drawing.Size(134, 41);
             this.button27.TabIndex = 50;
-            this.button27.Text = "Adicionar";
+            this.button27.Text = "Confirmar";
             this.button27.UseVisualStyleBackColor = false;
             this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
@@ -2284,7 +2305,7 @@
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(134, 41);
             this.button28.TabIndex = 50;
-            this.button28.Text = "Atualizar";
+            this.button28.Text = "Confirmar";
             this.button28.UseVisualStyleBackColor = false;
             this.button28.Click += new System.EventHandler(this.button28_Click);
             // 
@@ -2516,7 +2537,7 @@
             this.button29.Name = "button29";
             this.button29.Size = new System.Drawing.Size(134, 41);
             this.button29.TabIndex = 50;
-            this.button29.Text = "Remover";
+            this.button29.Text = "Confirmar";
             this.button29.UseVisualStyleBackColor = false;
             this.button29.Click += new System.EventHandler(this.button29_Click);
             // 
@@ -2815,46 +2836,27 @@
             this.label87.TabIndex = 22;
             this.label87.Text = "Histórico Paciente";
             // 
-            // senhaNovaC
-            // 
-            this.senhaNovaC.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.senhaNovaC.Location = new System.Drawing.Point(238, 91);
-            this.senhaNovaC.Name = "senhaNovaC";
-            this.senhaNovaC.PasswordChar = '*';
-            this.senhaNovaC.Size = new System.Drawing.Size(174, 26);
-            this.senhaNovaC.TabIndex = 55;
-            // 
-            // label83
-            // 
-            this.label83.AutoSize = true;
-            this.label83.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label83.Location = new System.Drawing.Point(6, 91);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(226, 22);
-            this.label83.TabIndex = 54;
-            this.label83.Text = "Confirmar Nova Senha:";
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1030, 611);
+            this.Controls.Add(this.ApagarConsultaBox);
+            this.Controls.Add(this.AddConsultasBox);
+            this.Controls.Add(this.PacienteEditarBox);
+            this.Controls.Add(this.RemoverPacienteBox);
+            this.Controls.Add(this.PacienteADDBOX);
+            this.Controls.Add(this.EditarConsultasBox);
             this.Controls.Add(this.PerfilBox);
-            this.Controls.Add(this.panelFuncionarios);
-            this.Controls.Add(this.panelPacientes);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pacienteHistorico);
-            this.Controls.Add(this.RemoverPacienteBox);
-            this.Controls.Add(this.PacienteEditarBox);
-            this.Controls.Add(this.EditarConsultasBox);
-            this.Controls.Add(this.PacienteADDBOX);
             this.Controls.Add(this.panelConsultas);
-            this.Controls.Add(this.panelExames);
-            this.Controls.Add(this.AddConsultasBox);
-            this.Controls.Add(this.ApagarConsultaBox);
             this.Controls.Add(this.HistoricoBox);
+            this.Controls.Add(this.pacienteHistorico);
+            this.Controls.Add(this.panelFuncionarios);
+            this.Controls.Add(this.panelPacientes);
+            this.Controls.Add(this.panelExames);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
