@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.textUtil = new System.Windows.Forms.TextBox();
             this.textSenha = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -218,6 +219,7 @@
             this.panelQR.Size = new System.Drawing.Size(401, 540);
             this.panelQR.TabIndex = 11;
             this.panelQR.Visible = false;
+            this.panelQR.Paint += new System.Windows.Forms.PaintEventHandler(this.panelQR_Paint);
             this.panelQR.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelQR_MouseClick);
             // 
             // labelAPP
@@ -231,10 +233,11 @@
             this.labelAPP.Size = new System.Drawing.Size(240, 24);
             this.labelAPP.TabIndex = 1;
             this.labelAPP.Text = "Instala já a nossa APP!";
+            this.labelAPP.Click += new System.EventHandler(this.labelAPP_Click);
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = global::Ajuda_.Properties.Resources.QRCODE;
+            this.pictureBox7.Image = global::Ajuda_.Properties.Resources.qrcode_final;
             this.pictureBox7.Location = new System.Drawing.Point(66, 124);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(278, 257);
@@ -261,6 +264,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelQR);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

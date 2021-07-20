@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registar));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -54,9 +55,9 @@
             this.textDocumento = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label11 = new System.Windows.Forms.Label();
-            this.textApelido = new System.Windows.Forms.TextBox();
             this.textNacionalidade = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textConfirmSenha = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -131,7 +132,7 @@
             this.textTelemovel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textTelemovel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textTelemovel.ForeColor = System.Drawing.Color.Black;
-            this.textTelemovel.Location = new System.Drawing.Point(275, 215);
+            this.textTelemovel.Location = new System.Drawing.Point(261, 142);
             this.textTelemovel.Name = "textTelemovel";
             this.textTelemovel.Size = new System.Drawing.Size(205, 29);
             this.textTelemovel.TabIndex = 4;
@@ -151,7 +152,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(271, 190);
+            this.label2.Location = new System.Drawing.Point(257, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 22);
             this.label2.TabIndex = 13;
@@ -161,7 +162,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(271, 263);
+            this.label3.Location = new System.Drawing.Point(257, 190);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(200, 22);
             this.label3.TabIndex = 15;
@@ -171,7 +172,7 @@
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(275, 288);
+            this.dateTimePicker1.Location = new System.Drawing.Point(261, 215);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(205, 29);
             this.dateTimePicker1.TabIndex = 6;
@@ -260,7 +261,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(271, 410);
+            this.label8.Location = new System.Drawing.Point(257, 337);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 22);
             this.label8.TabIndex = 27;
@@ -272,7 +273,7 @@
             this.textSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textSenha.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textSenha.ForeColor = System.Drawing.Color.Black;
-            this.textSenha.Location = new System.Drawing.Point(275, 435);
+            this.textSenha.Location = new System.Drawing.Point(261, 362);
             this.textSenha.Name = "textSenha";
             this.textSenha.PasswordChar = '*';
             this.textSenha.Size = new System.Drawing.Size(205, 29);
@@ -307,7 +308,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(271, 337);
+            this.label9.Location = new System.Drawing.Point(257, 264);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(275, 22);
             this.label9.TabIndex = 33;
@@ -319,7 +320,7 @@
             this.textDocumento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textDocumento.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textDocumento.ForeColor = System.Drawing.Color.Black;
-            this.textDocumento.Location = new System.Drawing.Point(275, 362);
+            this.textDocumento.Location = new System.Drawing.Point(261, 289);
             this.textDocumento.Name = "textDocumento";
             this.textDocumento.Size = new System.Drawing.Size(205, 29);
             this.textDocumento.TabIndex = 8;
@@ -341,28 +342,6 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(271, 117);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(98, 22);
-            this.label11.TabIndex = 38;
-            this.label11.Text = "Apelidos*";
-            // 
-            // textApelido
-            // 
-            this.textApelido.BackColor = System.Drawing.Color.White;
-            this.textApelido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textApelido.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textApelido.ForeColor = System.Drawing.Color.Black;
-            this.textApelido.Location = new System.Drawing.Point(275, 142);
-            this.textApelido.Name = "textApelido";
-            this.textApelido.Size = new System.Drawing.Size(205, 29);
-            this.textApelido.TabIndex = 2;
-            this.textApelido.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // textNacionalidade
             // 
             this.textNacionalidade.BackColor = System.Drawing.Color.White;
@@ -375,15 +354,37 @@
             this.textNacionalidade.TabIndex = 5;
             this.textNacionalidade.TextChanged += new System.EventHandler(this.textNacionalidade_TextChanged);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(257, 410);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(174, 22);
+            this.label11.TabIndex = 72;
+            this.label11.Text = "Confirmar Senha*";
+            // 
+            // textConfirmSenha
+            // 
+            this.textConfirmSenha.BackColor = System.Drawing.Color.White;
+            this.textConfirmSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textConfirmSenha.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textConfirmSenha.ForeColor = System.Drawing.Color.Black;
+            this.textConfirmSenha.Location = new System.Drawing.Point(261, 435);
+            this.textConfirmSenha.Name = "textConfirmSenha";
+            this.textConfirmSenha.PasswordChar = '*';
+            this.textConfirmSenha.Size = new System.Drawing.Size(205, 29);
+            this.textConfirmSenha.TabIndex = 71;
+            // 
             // Registar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(558, 579);
-            this.Controls.Add(this.textNacionalidade);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textApelido);
+            this.Controls.Add(this.textConfirmSenha);
+            this.Controls.Add(this.textNacionalidade);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textDocumento);
@@ -407,6 +408,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Registar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registar";
@@ -446,8 +448,8 @@
         private System.Windows.Forms.TextBox textDocumento;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textApelido;
         private System.Windows.Forms.TextBox textNacionalidade;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textConfirmSenha;
     }
 }

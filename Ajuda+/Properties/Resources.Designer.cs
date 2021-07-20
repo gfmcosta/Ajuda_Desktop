@@ -63,6 +63,16 @@ namespace Ajuda_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _17_178841_home_png_home_icon_free {
+            get {
+                object obj = ResourceManager.GetObject("17-178841_home-png-home-icon-free", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _blur {
             get {
                 object obj = ResourceManager.GetObject("_blur", resourceCulture);
@@ -86,6 +96,26 @@ namespace Ajuda_.Properties {
         internal static System.Drawing.Bitmap close {
             get {
                 object obj = ResourceManager.GetObject("close", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap health_wallpaper_hd_29846_health {
+            get {
+                object obj = ResourceManager.GetObject("health-wallpaper-hd-29846-health", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap home {
+            get {
+                object obj = ResourceManager.GetObject("home", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,6 +193,16 @@ namespace Ajuda_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pngwing_com {
+            get {
+                object obj = ResourceManager.GetObject("pngwing.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap QRCODE {
             get {
                 object obj = ResourceManager.GetObject("QRCODE", resourceCulture);
@@ -176,6 +216,16 @@ namespace Ajuda_.Properties {
         internal static System.Drawing.Bitmap QRCODE_cort {
             get {
                 object obj = ResourceManager.GetObject("QRCODE_cort", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap qrcode_final {
+            get {
+                object obj = ResourceManager.GetObject("qrcode_final", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Autenticador));
             this.t1 = new System.Windows.Forms.TextBox();
             this.t2 = new System.Windows.Forms.TextBox();
             this.t3 = new System.Windows.Forms.TextBox();
@@ -162,7 +163,7 @@
             this.entrar.Name = "entrar";
             this.entrar.Size = new System.Drawing.Size(93, 31);
             this.entrar.TabIndex = 7;
-            this.entrar.Text = "Verificar";
+            this.entrar.Text = "Confirmar";
             this.entrar.UseVisualStyleBackColor = false;
             this.entrar.Click += new System.EventHandler(this.entrar_Click);
             // 
@@ -197,6 +198,7 @@
             this.Controls.Add(this.t2);
             this.Controls.Add(this.t1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Autenticador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Autenticador";

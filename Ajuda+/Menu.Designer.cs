@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -122,6 +124,7 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.ApagarConsultaBox = new System.Windows.Forms.GroupBox();
+            this.nifMarcacaoRemover = new System.Windows.Forms.TextBox();
             this.profissionalMarcacaoRemover = new System.Windows.Forms.TextBox();
             this.horaMarcacaoRemover = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
@@ -129,7 +132,6 @@
             this.dataMarcacaoRemover = new System.Windows.Forms.DateTimePicker();
             this.label32 = new System.Windows.Forms.Label();
             this.button25 = new System.Windows.Forms.Button();
-            this.nifMarcacaoRemover = new System.Windows.Forms.TextBox();
             this.tipoMarcacaoRemover = new System.Windows.Forms.TextBox();
             this.codMarcacaoRemover = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
@@ -248,7 +250,11 @@
             this.button30 = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label87 = new System.Windows.Forms.Label();
+            this.Principal = new System.Windows.Forms.Panel();
+            this.label84 = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
@@ -276,11 +282,14 @@
             this.pacienteHistorico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.Principal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(102)))));
+            this.panel1.Controls.Add(this.pictureBox8);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.pictureBox4);
@@ -293,6 +302,18 @@
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackgroundImage = global::Ajuda_.Properties.Resources.home;
+            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox8.Location = new System.Drawing.Point(7, 13);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox8.TabIndex = 11;
+            this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
             // 
             // label1
             // 
@@ -1414,6 +1435,7 @@
             // 
             // ApagarConsultaBox
             // 
+            this.ApagarConsultaBox.Controls.Add(this.nifMarcacaoRemover);
             this.ApagarConsultaBox.Controls.Add(this.profissionalMarcacaoRemover);
             this.ApagarConsultaBox.Controls.Add(this.horaMarcacaoRemover);
             this.ApagarConsultaBox.Controls.Add(this.label33);
@@ -1421,7 +1443,6 @@
             this.ApagarConsultaBox.Controls.Add(this.dataMarcacaoRemover);
             this.ApagarConsultaBox.Controls.Add(this.label32);
             this.ApagarConsultaBox.Controls.Add(this.button25);
-            this.ApagarConsultaBox.Controls.Add(this.nifMarcacaoRemover);
             this.ApagarConsultaBox.Controls.Add(this.tipoMarcacaoRemover);
             this.ApagarConsultaBox.Controls.Add(this.codMarcacaoRemover);
             this.ApagarConsultaBox.Controls.Add(this.label40);
@@ -1436,6 +1457,16 @@
             this.ApagarConsultaBox.TabIndex = 47;
             this.ApagarConsultaBox.TabStop = false;
             this.ApagarConsultaBox.Visible = false;
+            // 
+            // nifMarcacaoRemover
+            // 
+            this.nifMarcacaoRemover.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nifMarcacaoRemover.Location = new System.Drawing.Point(159, 235);
+            this.nifMarcacaoRemover.MaxLength = 9;
+            this.nifMarcacaoRemover.Name = "nifMarcacaoRemover";
+            this.nifMarcacaoRemover.Size = new System.Drawing.Size(118, 26);
+            this.nifMarcacaoRemover.TabIndex = 34;
+            this.nifMarcacaoRemover.TextChanged += new System.EventHandler(this.nifMarcacaoRemover_TextChanged);
             // 
             // profissionalMarcacaoRemover
             // 
@@ -1515,16 +1546,6 @@
             this.button25.Text = "Confirmar";
             this.button25.UseVisualStyleBackColor = false;
             this.button25.Click += new System.EventHandler(this.button25_Click);
-            // 
-            // nifMarcacaoRemover
-            // 
-            this.nifMarcacaoRemover.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nifMarcacaoRemover.Location = new System.Drawing.Point(159, 235);
-            this.nifMarcacaoRemover.MaxLength = 9;
-            this.nifMarcacaoRemover.Name = "nifMarcacaoRemover";
-            this.nifMarcacaoRemover.Size = new System.Drawing.Size(118, 26);
-            this.nifMarcacaoRemover.TabIndex = 34;
-            this.nifMarcacaoRemover.TextChanged += new System.EventHandler(this.nifMarcacaoRemover_TextChanged);
             // 
             // tipoMarcacaoRemover
             // 
@@ -2836,21 +2857,52 @@
             this.label87.TabIndex = 22;
             this.label87.Text = "Histórico Paciente";
             // 
+            // Principal
+            // 
+            this.Principal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(199)))), ((int)(((byte)(160)))));
+            this.Principal.Controls.Add(this.label84);
+            this.Principal.Controls.Add(this.pictureBox7);
+            this.Principal.Location = new System.Drawing.Point(-1, 33);
+            this.Principal.Name = "Principal";
+            this.Principal.Size = new System.Drawing.Size(1034, 524);
+            this.Principal.TabIndex = 52;
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Font = new System.Drawing.Font("Arial", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label84.Location = new System.Drawing.Point(285, 38);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(466, 62);
+            this.label84.TabIndex = 1;
+            this.label84.Text = "Ajudar o Próximo";
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackgroundImage = global::Ajuda_.Properties.Resources.logo_ajuda__2____2;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox7.Location = new System.Drawing.Point(353, 124);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(300, 300);
+            this.pictureBox7.TabIndex = 0;
+            this.pictureBox7.TabStop = false;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1030, 611);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.RemoverPacienteBox);
             this.Controls.Add(this.ApagarConsultaBox);
             this.Controls.Add(this.AddConsultasBox);
+            this.Controls.Add(this.Principal);
             this.Controls.Add(this.PacienteEditarBox);
-            this.Controls.Add(this.RemoverPacienteBox);
             this.Controls.Add(this.PacienteADDBOX);
             this.Controls.Add(this.EditarConsultasBox);
             this.Controls.Add(this.PerfilBox);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelConsultas);
             this.Controls.Add(this.HistoricoBox);
             this.Controls.Add(this.pacienteHistorico);
@@ -2858,11 +2910,13 @@
             this.Controls.Add(this.panelPacientes);
             this.Controls.Add(this.panelExames);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -2900,6 +2954,9 @@
             this.pacienteHistorico.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.Principal.ResumeLayout(false);
+            this.Principal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3126,5 +3183,9 @@
         private System.Windows.Forms.Button button32;
         private System.Windows.Forms.TextBox senhaNovaC;
         private System.Windows.Forms.Label label83;
+        private System.Windows.Forms.Panel Principal;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Label label84;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }

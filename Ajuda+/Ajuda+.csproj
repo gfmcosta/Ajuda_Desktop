@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo_ajuda+%282%29 - 2.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BasselTech CamCapture">
       <HintPath>..\..\QRCODE test\Cam Libs\BasselTech CamCapture.dll</HintPath>
@@ -188,6 +191,23 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user_ajuda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\health-wallpaper-hd-29846-health.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngwing.com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\17-178841_home-png-home-icon-free.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo_ajuda+%282%29 - 2.ico" />
+    <Content Include="Resources\qrcode_final.png" />
+    <None Include="Resources\qrcode_final1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

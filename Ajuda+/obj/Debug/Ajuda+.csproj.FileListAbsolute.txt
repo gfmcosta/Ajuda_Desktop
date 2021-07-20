@@ -87,3 +87,25 @@ E:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda+.csproj.CoreCompileInputs.cache
 E:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda+.csproj.CopyComplete
 E:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda+.exe
 E:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda+.pdb
+G:\PAP\C#\Ajuda+\Ajuda+\bin\Debug\Ajuda+.exe.config
+G:\PAP\C#\Ajuda+\Ajuda+\bin\Debug\Ajuda+.exe
+G:\PAP\C#\Ajuda+\Ajuda+\bin\Debug\Ajuda+.pdb
+G:\PAP\C#\Ajuda+\Ajuda+\bin\Debug\BasselTech CamCapture.dll
+G:\PAP\C#\Ajuda+\Ajuda+\bin\Debug\MessagingToolkit.QRCode.dll
+G:\PAP\C#\Ajuda+\Ajuda+\bin\Debug\Newtonsoft.Json.dll
+G:\PAP\C#\Ajuda+\Ajuda+\bin\Debug\System.Net.Http.Formatting.dll
+G:\PAP\C#\Ajuda+\Ajuda+\bin\Debug\Newtonsoft.Json.xml
+G:\PAP\C#\Ajuda+\Ajuda+\bin\Debug\System.Net.Http.Formatting.xml
+G:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda+.csproj.AssemblyReference.cache
+G:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda_.Autenticador.resources
+G:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda_.Loading.resources
+G:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda_.Login.resources
+G:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda_.Menu.resources
+G:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda_.Properties.Resources.resources
+G:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda_.QRReader.resources
+G:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda_.Registar.resources
+G:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda+.csproj.GenerateResource.cache
+G:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda+.csproj.CoreCompileInputs.cache
+G:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda+.csproj.CopyComplete
+G:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda+.exe
+G:\PAP\C#\Ajuda+\Ajuda+\obj\Debug\Ajuda+.pdb
